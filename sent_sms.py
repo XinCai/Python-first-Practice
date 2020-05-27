@@ -1,10 +1,12 @@
-from twilio import TwilioRestException
-from twilio.rest import TwilioRestClient
+from twilio.base.exceptions import TwilioRestException
+from twilio.rest import TwilioRestClient, Client
 
 account_sid = "AC51c63d4a83cee616ab70eaecf37f5c81" # Your Account SID from www.twilio.com/console
 auth_token  = "af1a68c45673d4f12f494b0baeb83921"  # Your Auth Token from www.twilio.com/console
 
-client = TwilioRestClient(account_sid, auth_token)
+client = Client(account_sid, auth_token)
+
+#client = TwilioRestClient(account_sid, auth_token)
 
 try:
     message = client.messages.create(
